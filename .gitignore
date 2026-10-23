@@ -1,0 +1,8 @@
+# Source documents are copyrighted; only data/sources.md is tracked
+data/*
+!data/sources.md
+!data/.gitkeep
+*.pdf
+
+.ipynb_checkpoints/
+__pycache__/
