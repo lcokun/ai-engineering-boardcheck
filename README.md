@@ -15,12 +15,12 @@ Which slots slow down or switch off on a motherboard depends on the CPU and on w
 - MMLongBench-Doc. Ma et al., NeurIPS 2024 Datasets & Benchmarks, arXiv:2407.01523. The best model reached only 42.7% F1 on long-PDF question answering. It is a general benchmark and doesn't cover hardware manuals or footnoted spec tables.
 
 ## Engineering Gap / Limitation
-No existing tool answers slot-configuration questions from the official manual with a page citation. The deciding facts live in footnotes attached to table cells, and vendors name the same CPU group differently (MSI: "Ryzen 8500/8300"; Gigabyte: "Phoenix 2"; AMD: neither).
+No existing tool answers slot-configuration questions from the official manual with a page citation. The deciding facts live in footnotes attached to table cells, and vendors name the same CPU group differently (MSI: "Ryzen 8500/8300"; Gigabyte: "Phoenix 2"; AMD: "Phoenix" for all four 8000G parts).
 
 ## Project Objectives
 - O1: To design a retrieval-grounded assistant that answers configuration questions about three AM5 B650 motherboards from their official manuals and AMD CPU specifications, citing the manual page for every answer.
-- O2: To develop a document pipeline that extracts spec tables with their footnotes intact, plus retrieval and guardrails that refuse questions outside the document set.
-- O3: To evaluate the system on a hand-written gold set of 60 to 75 questions for answer accuracy, citation accuracy, correct refusals and latency, reported per manual and compared against a no-retrieval LLM, keyword search and PCPartPicker.
+- O2: To develop a document pipeline that keeps spec-table footnotes attached to their rows, a CPU-group mapping across vendor naming, and guardrails that refuse unanswerable questions and flag CPUs a manual does not cover.
+- O3: To evaluate the system on a hand-written gold set of 74 questions (54 answerable, 20 unanswerable) for answer accuracy, citation accuracy, correct refusals and latency, reported per manual and compared against a no-retrieval LLM, keyword search and PCPartPicker.
 
 ## Target Users
 DIY PC builders planning an AM5 B650 build or upgrade, especially first-time builders and people adding SSDs or expansion cards to a board they already own.
@@ -29,7 +29,7 @@ DIY PC builders planning an AM5 B650 build or upgrade, especially first-time bui
 - MSI MAG B650 TOMAHAWK WIFI user guide: https://download.msi.com/archive/mnu_exe/mb/MAGB650TOMAHAWKWIFI.pdf
 - Gigabyte B650 AORUS ELITE AX user's manual, rev 1204: https://download.gigabyte.com/FileList/Manual/mb_manual_b650-aorus-elite-ax_1204_e.pdf
 - ASUS ROG STRIX B650-A GAMING WIFI user manual, E20268: https://dlcdnets.asus.com/pub/ASUS/mb/Socket%20AM5/ROG%20STRIX%20B650-A%20GAMING%20WIFI/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf
-- AMD Ryzen 7 9700X, Ryzen 5 7600, Ryzen 7 8700G and Ryzen 5 8500G specification pages (amd.com; full URLs in `docs/week1_project_scope.md`)
+- AMD Ryzen 7 9700X, Ryzen 5 7600, Ryzen 7 8700G, Ryzen 5 8600G, Ryzen 5 8500G and Ryzen 3 8300G specification pages (amd.com; full URLs and revisions in `data/sources.md`)
 
 The documents are copyrighted, so this repository stores their URLs and not the PDFs.
 
@@ -37,3 +37,4 @@ The documents are copyrighted, so this repository stores their URLs and not the 
 | Week | Focus | Deliverable | Status |
 |------|-------|-------------|--------|
 | W1 | System map + project scope | README + docs | ✅ |
+| W2 | Requirements, evaluation criteria, V1 architecture | docs/week2_*.md + week2_architecture_v1.png | ✅ |
