@@ -42,7 +42,7 @@ The documents are copyrighted, so this repository stores their URLs and not the 
 | W4 | Data quality and responsible data practices | docs/week4_data_quality_report.md + evaluation/week4_quality_checks.py | ✅ GO WITH CONDITIONS |
 
 ## Data Quality Gate (Week 4)
-The decision is GO WITH CONDITIONS for the Topic 3 Part B prepared text (551 records), for building and testing the Topic 5 retrieval prototype; gold-set scoring of NFR2 and RAI4 waits for C1 and C2.
+The decision is GO WITH CONDITIONS for the Topic 3 Part B prepared text (551 records), for building and testing the Topic 7 RAG prototype; gold-set scoring of NFR2 and RAI4 waits for C1 and C2.
 
 - C1: row-plus-note units (ADR 2) in place, and the footnote check (V2) plus the Gigabyte p. 26 probe pass, before NFR2 is scored.
 - C2: records carry printed page numbers next to PDF pages, and the gold set is labelled with PDF pages, before citations are shown to users.

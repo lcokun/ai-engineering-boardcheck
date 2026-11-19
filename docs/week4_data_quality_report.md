@@ -23,7 +23,7 @@ Checkpoint A1: if a deciding footnote went missing, FR1 would fail silently. For
 | Consistency | Observed: records and the Week 2 gold set cite PDF pages, but the printed page numbers differ. MSI PDF = printed + 2. ASUS uses four numbering segments (roman, then chapter-page; e.g. PDF p. 26 = printed "1-14"). Gigabyte matches. | V1 on 143 pages (section 3) | A user who looks up an MSI or ASUS citation using the printed numbers lands on the wrong page (FR5, RAI1). | Warning |
 | Accuracy | Observed: in 5 sampled chunks checked against rendered page images, every fact matched. The two slot-table pages (S01-p018, S02-p009) are clean. Three connector or layout pages have diagram-label noise, and S02-p023 has the wrong reading order (warnings placed before their section). | Manual check of S01-p018-c01, S02-p009-c01, S03-p010-c01, S02-p023-c01 and S01-p047-c01; p. 23 order confirmed by eye | Noise dilutes retrieval on layout pages. Wrong reading order can separate a caution from the header it belongs to. The 15 unchecked sample records are N.V. for accuracy. | Warning |
 | Timeliness | Observed: the ASUS manual (E20268, Sept 2022) covers Ryzen 7000 only; 0 of 68 ASUS chunks mention Ryzen 8000 or 9000. The MSI and Gigabyte manuals (Dec 2024) cover all three generations. Manual byte sizes matched `sources.md` at ingest on 17 Nov 2026. AMD pages were saved 16 Nov 2026 and have no revision number. | Coverage check (section 4); Cell 3 size check; inventory | ASUS questions about Ryzen 8000/9000 can't be answered. That's expected and handled by FR7/RAI3, with 8 coverage-gap gold questions. Whether a vendor has replaced a file since 17 Nov is N.V. | Warning |
-| Uniqueness | Observed: 0 exact duplicate texts across 551 records. The intentional 150-character overlap repeats 1.3% (MSI), 3.5% (Gigabyte) and 2.0% (ASUS) of manual text. 20 AMD field values are identical on all six CPU pages, and 62 on two to five pages. Inferred risk: for a shared value, retrieval may return another CPU's record, so the answer would be right but the citation would name the wrong CPU page. | Uniqueness check (section 4) | Possible FR5 citation mismatch on AMD fields. Each record's text starts with the CPU name, which should keep this low, but that's untested until Topic 5 retrieval. | Pass |
+| Uniqueness | Observed: 0 exact duplicate texts across 551 records. The intentional 150-character overlap repeats 1.3% (MSI), 3.5% (Gigabyte) and 2.0% (ASUS) of manual text. 20 AMD field values are identical on all six CPU pages, and 62 on two to five pages. Inferred risk: for a shared value, retrieval may return another CPU's record, so the answer would be right but the citation would name the wrong CPU page. | Uniqueness check (section 4) | Possible FR5 citation mismatch on AMD fields. Each record's text starts with the CPU name, which should keep this low, but that's untested until retrieval exists (Topic 7). | Pass |
 
 ## 3. Validation Findings
 
@@ -77,7 +77,7 @@ Main risk: measurement and pipeline-induced skew against the Gigabyte manual.
 | Potential effect | Lower NFR2 evidence recall for Gigabyte questions, and so a per-manual gap under RAI4: Gigabyte owners would get more answers missing the deciding note. Because the check is weaker for Gigabyte, the gap could go unnoticed until gold-set scoring. |
 | Proposed control | (1) Row-plus-note units (ADR 2), with a Gigabyte rule that attaches each `*` line to the item above it. (2) A positional V2 variant for Gigabyte: every note line must share a chunk with the line above it. (3) Report NFR2 and NFR1 per manual, as RAI4 already requires, so the gap shows up. |
 
-This is a potential risk, not proven unfairness. No retrieval or answers exist yet, so per-manual answer quality cannot be measured until Topic 5.
+This is a potential risk, not proven unfairness. No retrieval or answers exist yet, so per-manual answer quality cannot be measured until the RAG prototype (Topic 7) is evaluated (Topic 8).
 
 Secondary risk: historical bias in the ASUS source. The only ASUS edition is from 2022 and covers Ryzen 7000 only, so ASUS owners with newer CPUs will get coverage notices instead of answers. That is correct behaviour under RAI3, but the per-manual answer rate will be lower for ASUS for reasons outside the system, so RAI4 reporting should separate those refusals from wrong answers.
 
@@ -89,7 +89,7 @@ Checked and ruled out: □ stripping. On Gigabyte pp. 23–30 it removed 936 tok
 |---|---|
 | Provenance and version | Source IDs S01–S09 with URLs, revisions, file dates and sizes in `data/sources.md`. SHA-256 for every raw and prepared file in `data/week3_manifest.json`; Part C run in `data/pipeline_v1/documents/pipeline_manifest.json`; pypdf 7.1.0 recorded. AMD pages have no revision, only the 16 Nov 2026 save date. |
 | Rights and permissions | All nine are copyrighted. Gigabyte forbids reproduction without written permission, MSI reserves all rights, the ASUS PDF disallows copying (`copy:no`), and AMD allows personal, non-public use. No written permission was obtained for using the text in a coursework prototype: N.V. Sharing restriction: no redistribution. |
-| Privacy and sensitive data | No personal data: the sources are product manuals and spec pages, and no user data exists at this stage. Later, user questions could contain personal details, so Topic 5+ logging should store questions without identities. |
+| Privacy and sensitive data | No personal data: the sources are product manuals and spec pages, and no user data exists at this stage. Later, user questions could contain personal details, so later logging should store questions without identities. |
 | Consent or collection basis | Not applicable: no data about people. The basis is publicly downloadable vendor documents, used under their own terms. |
 | Ongoing maintenance | Owner: me. Re-validation triggers: a manual's size or date changing in `sources.md` (vendor replaced the file), a new ASUS edition covering Ryzen 8000/9000, or an AMD spec change. Re-validation means re-running the notebook and `evaluation/week4_quality_checks.py`, then re-checking the gold-set pages. |
 
@@ -103,8 +103,8 @@ Two priority improvements:
 
 | # | Improvement | Who | When | Requirements protected |
 |---|---|---|---|---|
-| 1 | Row-plus-note units (ADR 2): attach each footnote or positional `*` note to its row, then add the positional V2 check for Gigabyte. Re-run V2 and the p. 26 known-gap probe, which should then pass. | Me | Topic 5, before building the index and before any NFR2 scoring | NFR2 (evidence recall ≥ 90%), RAI4 (per-manual gap ≤ 15 pp), NFR1 |
-| 2 | Printed page numbers in citations: add a `printed_page` field to every manual record from the V1 mapping, and show citations as "PDF p. 18 (printed p. 16)". Label the Week 2 gold set's pages explicitly as PDF pages. | Me | Topic 5, before citations reach users; gold-set labels before scoring | FR5, RAI1 (a citation the user can actually find) |
+| 1 | Row-plus-note units (ADR 2): attach each footnote or positional `*` note to its row, then add the positional V2 check for Gigabyte. Re-run V2 and the p. 26 known-gap probe, which should then pass. | Me | Topic 7, before building the index; before any NFR2 scoring in Topic 8 | NFR2 (evidence recall ≥ 90%), RAI4 (per-manual gap ≤ 15 pp), NFR1 |
+| 2 | Printed page numbers in citations: add a `printed_page` field to every manual record from the V1 mapping, and show citations as "PDF p. 18 (printed p. 16)". Label the Week 2 gold set's pages explicitly as PDF pages. | Me | Topic 7, before citations reach users; gold-set labels before Topic 8 scoring | FR5, RAI1 (a citation the user can actually find) |
 
 Lower-priority follow-ups: filter runs of diagram-label lines on layout pages (retrieval noise), and re-check the AMD pages and manual sizes before the gold-set run.
 
@@ -122,7 +122,7 @@ Residual risks after both improvements: accuracy is N.V. for the 15 unchecked sa
 
 ## 8. Quality-Gate Decision
 
-Decision: GO WITH CONDITIONS. Scope: the Topic 3 Part B prepared text (551 records, pipeline `week3-v1`), for building and testing the Topic 5 retrieval prototype. Gold-set scoring of NFR2 and RAI4 is not covered until conditions C1 and C2 are met.
+Decision: GO WITH CONDITIONS. Scope: the Topic 3 Part B prepared text (551 records, pipeline `week3-v1`), for building and testing the Topic 7 RAG prototype. Gold-set scoring of NFR2 and RAI4 is not covered until conditions C1 and C2 are met.
 
 Evidence:
 
@@ -130,7 +130,7 @@ Evidence:
 2. The content needed for FR1–3 survived preparation. All facts matched in the 5 accuracy checks, including both slot-table pages; the 8 regression probes pass; □ stripping lost no prose.
 3. No blocking rights or privacy issue: there is no personal data, and copyrighted files stay local under the handout's restricted-data rule.
 
-Conditions (owner: me; all in Topic 5):
+Conditions (owner: me; C1 to C3 in Topic 7, C4 before the Topic 8 gold-set run):
 
 - C1. Row-plus-note units are in place, and V2 plus the p. 26 probe pass, before NFR2 is scored.
 - C2. Records carry printed page numbers, and the gold set is labelled with PDF pages, before citations are shown to users.
