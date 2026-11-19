@@ -30,6 +30,7 @@ LABEL_SEARCH_LINES = 2
 MAX_HEADING_WORDS = 8
 ANOMALY_LIST_SIZE = 5
 BOX = "□"
+ROMAN_NUMERAL = re.compile(r"x{0,3}(ix|iv|v?i{0,3})")
 CONTROL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]")
 FOOTNOTE_REF = re.compile(r"\S(\*{1,3})|\(Note\)")
 FOOTNOTE_BODY = re.compile(r"^\s*(\*{1,3}|\(Note\))")
@@ -58,7 +59,11 @@ def roman_to_int(text: str) -> int | None:
     >>> roman_to_int("") is None
     True
     """
-    raise NotImplementedError
+    if not text or not ROMAN_NUMERAL.fullmatch(text):
+        return None
+    values = {"i": 1, "v": 5, "x": 10}
+    subtractive_pairs = text.count("iv") + text.count("ix")
+    return sum(values[char] for char in text) - 2 * subtractive_pairs
 
 
 def parse_page_label(line: str) -> tuple[str, int] | None:
@@ -85,7 +90,19 @@ def parse_page_label(line: str) -> tuple[str, int] | None:
     >>> parse_page_label("3 kgf·cm") is None
     True
     """
-    raise NotImplementedError
+    stripped = line.strip()
+    if re.fullmatch(r"\d+", stripped):
+        return ("arabic", int(stripped))
+    dashed = re.fullmatch(r"-\s*(\d+)\s*-", stripped)
+    if dashed:
+        return ("arabic", int(dashed.group(1)))
+    chapter = re.fullmatch(r"(\d+)-(\d+)", stripped)
+    if chapter:
+        return (f"chapter-{int(chapter.group(1))}", int(chapter.group(2)))
+    number = roman_to_int(stripped)
+    if number is not None:
+        return ("roman", number)
+    return None
 
 
 def overlap_len(first: str, second: str) -> int:
@@ -102,7 +119,11 @@ def overlap_len(first: str, second: str) -> int:
     >>> overlap_len("abc", "abc")
     3
     """
-    raise NotImplementedError
+    limit = min(len(first), len(second))
+    for size in range(limit, 0, -1):
+        if first[-size:] == second[:size]:
+            return size
+    return 0
 
 
 def letters(text: str) -> int:
