@@ -31,10 +31,22 @@ DIY PC builders planning an AM5 B650 build or upgrade, especially first-time bui
 - ASUS ROG STRIX B650-A GAMING WIFI user manual, E20268: https://dlcdnets.asus.com/pub/ASUS/mb/Socket%20AM5/ROG%20STRIX%20B650-A%20GAMING%20WIFI/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf
 - AMD Ryzen 7 9700X, Ryzen 5 7600, Ryzen 7 8700G, Ryzen 5 8600G, Ryzen 5 8500G and Ryzen 3 8300G specification pages (amd.com; full URLs and revisions in `data/sources.md`)
 
-The documents are copyrighted, so this repository stores their URLs and not the PDFs.
+The documents are copyrighted, so this repository stores their URLs and not the PDFs. The prepared text in `data/processed/` and `data/pipeline_v1/documents/` also stays local because it is extracted copyrighted text, and the repository keeps the lineage manifests (`data/week3_manifest.json`, `data/pipeline_v1/documents/pipeline_manifest.json`) with SHA-256 hashes so the outputs can be rebuilt and verified.
 
 ## Weekly Progress
 | Week | Focus | Deliverable | Status |
 |------|-------|-------------|--------|
 | W1 | System map + project scope | README + docs | ✅ |
 | W2 | Requirements, evaluation criteria, V1 architecture | docs/week2_*.md + week2_architecture_v1.png | ✅ |
+| W3 | Data engineering: V1 document pipeline (9 sources, 551 page-cited records) | notebooks/week3_pipeline.ipynb + docs/week3_data_inventory.md + docs/week3_pipeline_decisions.md + docs/week3_pipeline_diagram.png | ✅ |
+| W4 | Data quality and responsible data practices | docs/week4_data_quality_report.md + evaluation/week4_quality_checks.py | ✅ GO WITH CONDITIONS |
+
+## Data Quality Gate (Week 4)
+The decision is GO WITH CONDITIONS for the Topic 3 Part B prepared text (551 records), for building and testing the Topic 5 retrieval prototype; gold-set scoring of NFR2 and RAI4 waits for C1 and C2.
+
+- C1: row-plus-note units (ADR 2) in place, and the footnote check (V2) plus the Gigabyte p. 26 probe pass, before NFR2 is scored.
+- C2: records carry printed page numbers next to PDF pages, and the gold set is labelled with PDF pages, before citations are shown to users.
+- C3: ASUS answers stay limited to Ryzen 7000, with a coverage notice naming manual revision E20268.
+- C4: AMD spec pages and manual file sizes are re-checked before the gold-set run.
+
+The full report is in `docs/week4_data_quality_report.md`.

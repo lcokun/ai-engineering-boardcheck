@@ -1,8 +1,19 @@
-# Source documents are copyrighted; only data/sources.md is tracked
+# Source documents and extracted text are copyrighted; only lineage files are tracked
 data/*
 !data/sources.md
 !data/.gitkeep
+!data/week3_manifest.json
+!data/processed/
+data/processed/*
+!data/processed/README.md
+!data/pipeline_v1/
+data/pipeline_v1/*
+!data/pipeline_v1/documents/
+data/pipeline_v1/documents/*
+!data/pipeline_v1/documents/pipeline_manifest.json
 *.pdf
+*.html
+*.jsonl
 
 .ipynb_checkpoints/
 __pycache__/

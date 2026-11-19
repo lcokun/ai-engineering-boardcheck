@@ -1,0 +1,366 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-17T16:24:57.930001+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "method": "page-aware-lines",
+    "chunk_size": 1500,
+    "overlap": 150,
+    "min_page_letters": 40,
+    "pypdf_version": "7.1.0",
+    "sources": [
+      {
+        "source_id": "S01",
+        "relative_path": "manuals/MAGB650TOMAHAWKWIFI.pdf",
+        "url": "https://download.msi.com/archive/mnu_exe/mb/MAGB650TOMAHAWKWIFI.pdf",
+        "expected_bytes": 37426776,
+        "doc_title": "MSI MAG B650 TOMAHAWK WIFI user guide",
+        "revision": "No edition code printed; PDF file date 2024-12-18",
+        "cpu_coverage": "Ryzen 9000/8000/7000",
+        "locator_type": "pdf_page",
+        "page_range": [
+          5,
+          57
+        ],
+        "rights": "MSI copyrighted manual. Local copy only, not redistributed."
+      },
+      {
+        "source_id": "S02",
+        "relative_path": "manuals/mb_manual_b650-aorus-elite-ax_1204_e.pdf",
+        "url": "https://download.gigabyte.com/FileList/Manual/mb_manual_b650-aorus-elite-ax_1204_e.pdf",
+        "expected_bytes": 17239437,
+        "doc_title": "Gigabyte B650 AORUS ELITE AX user's manual",
+        "revision": "Rev 1204; PDF file date 2024-12-06",
+        "cpu_coverage": "Ryzen 9000/8000/7000",
+        "locator_type": "pdf_page",
+        "page_range": [
+          4,
+          36
+        ],
+        "rights": "Gigabyte forbids reproduction without written permission. Local copy only."
+      },
+      {
+        "source_id": "S03",
+        "relative_path": "manuals/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf",
+        "url": "https://dlcdnets.asus.com/pub/ASUS/mb/Socket%20AM5/ROG%20STRIX%20B650-A%20GAMING%20WIFI/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf",
+        "expected_bytes": 6386249,
+        "doc_title": "ASUS ROG STRIX B650-A GAMING WIFI user manual",
+        "revision": "E20268 First Edition, September 2022",
+        "cpu_coverage": "Ryzen 7000 only (no edition covers Ryzen 8000/9000)",
+        "locator_type": "pdf_page",
+        "page_range": [
+          4,
+          66
+        ],
+        "rights": "ASUS copyrighted; PDF permissions disallow copying (copy:no). Text extracted for private coursework only, not redistributed."
+      },
+      {
+        "source_id": "S04",
+        "relative_path": "amd/amd-ryzen-7-9700x.html",
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9700x.html",
+        "expected_bytes": null,
+        "doc_title": "AMD Ryzen 7 9700X spec page",
+        "revision": "Web page with no revision number; retrieval time recorded in the manifest",
+        "cpu_coverage": "n/a (CPU spec page)",
+        "locator_type": "spec_field",
+        "page_range": null,
+        "rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed."
+      },
+      {
+        "source_id": "S05",
+        "relative_path": "amd/amd-ryzen-5-7600.html",
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+        "expected_bytes": null,
+        "doc_title": "AMD Ryzen 5 7600 spec page",
+        "revision": "Web page with no revision number; retrieval time recorded in the manifest",
+        "cpu_coverage": "n/a (CPU spec page)",
+        "locator_type": "spec_field",
+        "page_range": null,
+        "rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed."
+      },
+      {
+        "source_id": "S06",
+        "relative_path": "amd/amd-ryzen-7-8700g.html",
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html",
+        "expected_bytes": null,
+        "doc_title": "AMD Ryzen 7 8700G spec page",
+        "revision": "Web page with no revision number; retrieval time recorded in the manifest",
+        "cpu_coverage": "n/a (CPU spec page)",
+        "locator_type": "spec_field",
+        "page_range": null,
+        "rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed."
+      },
+      {
+        "source_id": "S07",
+        "relative_path": "amd/amd-ryzen-5-8600g.html",
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8600g.html",
+        "expected_bytes": null,
+        "doc_title": "AMD Ryzen 5 8600G spec page",
+        "revision": "Web page with no revision number; retrieval time recorded in the manifest",
+        "cpu_coverage": "n/a (CPU spec page)",
+        "locator_type": "spec_field",
+        "page_range": null,
+        "rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed."
+      },
+      {
+        "source_id": "S08",
+        "relative_path": "amd/amd-ryzen-5-8500g.html",
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8500g.html",
+        "expected_bytes": null,
+        "doc_title": "AMD Ryzen 5 8500G spec page",
+        "revision": "Web page with no revision number; retrieval time recorded in the manifest",
+        "cpu_coverage": "n/a (CPU spec page)",
+        "locator_type": "spec_field",
+        "page_range": null,
+        "rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed."
+      },
+      {
+        "source_id": "S09",
+        "relative_path": "amd/amd-ryzen-3-8300g.html",
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-3-8300g.html",
+        "expected_bytes": null,
+        "doc_title": "AMD Ryzen 3 8300G spec page",
+        "revision": "Web page with no revision number; retrieval time recorded in the manifest",
+        "cpu_coverage": "n/a (CPU spec page)",
+        "locator_type": "spec_field",
+        "page_range": null,
+        "rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed."
+      }
+    ]
+  },
+  "processing_method": "page-aware-lines chunks of at most 1500 characters, 150 overlap (manuals); amd-spec-fields-dt-dd (AMD pages)",
+  "sources": [
+    {
+      "path": "data/raw/manuals/MAGB650TOMAHAWKWIFI.pdf",
+      "sha256": "b3373b0ae1c66eea355a75df92ea41600cde9cbd212ce1e0b098eada0394ffaf"
+    },
+    {
+      "path": "data/raw/manuals/mb_manual_b650-aorus-elite-ax_1204_e.pdf",
+      "sha256": "1e698c2c5cfaea02faa4e0bfb21662efcb691682f772c214f2e3d16bf2329379"
+    },
+    {
+      "path": "data/raw/manuals/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf",
+      "sha256": "0aa8080c48dcebcb1cf2a599a4adc1e3399513a76786c5885b4cc99a1cdaf50a"
+    },
+    {
+      "path": "data/raw/amd/amd-ryzen-7-9700x.html",
+      "sha256": "dc382f267008b498848e1ae611de1fa33fd9f507dadaae84cb6caed2171ca40e"
+    },
+    {
+      "path": "data/raw/amd/amd-ryzen-5-7600.html",
+      "sha256": "217a6351b1a8541c911e9117adfcc03de9359f1773512a4b715d7233a3a0eadf"
+    },
+    {
+      "path": "data/raw/amd/amd-ryzen-7-8700g.html",
+      "sha256": "c77546a289a07ddaf76db188f169427e8d243eb2ecd4ac3fc71c19cef5e7e422"
+    },
+    {
+      "path": "data/raw/amd/amd-ryzen-5-8600g.html",
+      "sha256": "78457ae54a761a44901527ee989a20ccb5dc2a8930249ed191fb1fe109539348"
+    },
+    {
+      "path": "data/raw/amd/amd-ryzen-5-8500g.html",
+      "sha256": "390302f2c41801efc880f10bc4b7cfe43ee33cd9f5755b48ef807cca31c8f61d"
+    },
+    {
+      "path": "data/raw/amd/amd-ryzen-3-8300g.html",
+      "sha256": "2eb347a864690edf88a587c96ce400b908cb579dc0ca07f1f457cea7ab743182"
+    }
+  ],
+  "outputs": [
+    "data/pipeline_v1/documents/prepared_text_S01.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S02.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S03.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S04.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S05.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S06.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S07.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S08.jsonl",
+    "data/pipeline_v1/documents/prepared_text_S09.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source_id": "S01",
+      "source": "data/raw/manuals/MAGB650TOMAHAWKWIFI.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text_S01.jsonl",
+      "records": 55,
+      "skipped_pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "source_id": "S02",
+      "source": "data/raw/manuals/mb_manual_b650-aorus-elite-ax_1204_e.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text_S02.jsonl",
+      "records": 47,
+      "skipped_pages": []
+    },
+    {
+      "source_id": "S03",
+      "source": "data/raw/manuals/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text_S03.jsonl",
+      "records": 68,
+      "skipped_pages": [
+        12,
+        36,
+        38,
+        66
+      ]
+    },
+    {
+      "source_id": "S04",
+      "source": "data/raw/amd/amd-ryzen-7-9700x.html",
+      "output": "data/pipeline_v1/documents/prepared_text_S04.jsonl",
+      "records": 54,
+      "skipped_pages": []
+    },
+    {
+      "source_id": "S05",
+      "source": "data/raw/amd/amd-ryzen-5-7600.html",
+      "output": "data/pipeline_v1/documents/prepared_text_S05.jsonl",
+      "records": 57,
+      "skipped_pages": []
+    },
+    {
+      "source_id": "S06",
+      "source": "data/raw/amd/amd-ryzen-7-8700g.html",
+      "output": "data/pipeline_v1/documents/prepared_text_S06.jsonl",
+      "records": 67,
+      "skipped_pages": []
+    },
+    {
+      "source_id": "S07",
+      "source": "data/raw/amd/amd-ryzen-5-8600g.html",
+      "output": "data/pipeline_v1/documents/prepared_text_S07.jsonl",
+      "records": 66,
+      "skipped_pages": []
+    },
+    {
+      "source_id": "S08",
+      "source": "data/raw/amd/amd-ryzen-5-8500g.html",
+      "output": "data/pipeline_v1/documents/prepared_text_S08.jsonl",
+      "records": 68,
+      "skipped_pages": []
+    },
+    {
+      "source_id": "S09",
+      "source": "data/raw/amd/amd-ryzen-3-8300g.html",
+      "output": "data/pipeline_v1/documents/prepared_text_S09.jsonl",
+      "records": 69,
+      "skipped_pages": []
+    }
+  ],
+  "inspection": [
+    {
+      "source_id": "S01",
+      "pdf_pages": 453,
+      "encrypted": false,
+      "page_range": "5-57",
+      "chars_min": 23,
+      "chars_median": 556,
+      "chars_max": 2284,
+      "near_empty_pages": [
+        16,
+        17
+      ],
+      "box_glyphs": 0,
+      "control_chars": 0
+    },
+    {
+      "source_id": "S02",
+      "pdf_pages": 41,
+      "encrypted": false,
+      "page_range": "4-36",
+      "chars_min": 378,
+      "chars_median": 1579,
+      "chars_max": 4795,
+      "near_empty_pages": [],
+      "box_glyphs": 6138,
+      "control_chars": 90
+    },
+    {
+      "source_id": "S03",
+      "pdf_pages": 80,
+      "encrypted": true,
+      "page_range": "4-66",
+      "chars_min": 3,
+      "chars_median": 718,
+      "chars_max": 2291,
+      "near_empty_pages": [
+        12
+      ],
+      "box_glyphs": 0,
+      "control_chars": 0
+    },
+    {
+      "source_id": "S04",
+      "spec_fields": 54,
+      "sections": 5,
+      "fields_without_section": 0,
+      "empty_values": 0
+    },
+    {
+      "source_id": "S05",
+      "spec_fields": 57,
+      "sections": 5,
+      "fields_without_section": 0,
+      "empty_values": 0
+    },
+    {
+      "source_id": "S06",
+      "spec_fields": 67,
+      "sections": 6,
+      "fields_without_section": 0,
+      "empty_values": 0
+    },
+    {
+      "source_id": "S07",
+      "spec_fields": 66,
+      "sections": 6,
+      "fields_without_section": 0,
+      "empty_values": 0
+    },
+    {
+      "source_id": "S08",
+      "spec_fields": 68,
+      "sections": 5,
+      "fields_without_section": 0,
+      "empty_values": 0
+    },
+    {
+      "source_id": "S09",
+      "spec_fields": 69,
+      "sections": 5,
+      "fields_without_section": 0,
+      "empty_values": 0
+    }
+  ],
+  "validation": {
+    "output_count": 9,
+    "output_sha256": [
+      "1b2fd01740b12a70d3b95188085ad4f14380e1055ff9725e73a0603b9350e8f0",
+      "f1f9a93e56f1a88e5acf7b0a17419082d49463b1895194423e7d48e63d0f4df0",
+      "ed0b35ba9e52bd83da358ce7fc690f6328ae7d4c597996eb7e56d6ccd0eac06b",
+      "4abb64fe2e669f7db8aba32e84d0fc3633461e345af452f19a4a3b23c91abc7c",
+      "7d3a0f7571ca1b091ef7350936382d77db4bc9b72c7c7d10f18ee47bff75b75c",
+      "4eab958524b255a0ca0a19599b85f4a992530f629c57548d158e8e981ddd2573",
+      "00eba0791abe6df24ac72b2d518a42aac45d8cb3369f10e7e1dafe759156b6bd",
+      "7946de8cfbe5cc6ebcbf35e1fdeb5c55aca17aa5481ceae4069ea736823e08f4",
+      "6866dd28a4cc9491983efff382eb09d23d0b5c0fae480c3ffbbbfe2a3f4f2821"
+    ],
+    "output_bytes": [
+      62800,
+      71967,
+      86517,
+      31949,
+      33430,
+      40112,
+      39492,
+      40712,
+      41264
+    ]
+  },
+  "source_version": "Not verified",
+  "access_rights": "Not verified — check before sharing"
+}

@@ -1,0 +1,209 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-17T16:23:46.716442+00:00",
+  "records": [
+    {
+      "source_id": "S01",
+      "source_filename": "manuals/MAGB650TOMAHAWKWIFI.pdf",
+      "source_sha256": "b3373b0ae1c66eea355a75df92ea41600cde9cbd212ce1e0b098eada0394ffaf",
+      "prepared_output": "data/processed/prepared_text_S01.jsonl",
+      "prepared_sha256": "1b2fd01740b12a70d3b95188085ad4f14380e1055ff9725e73a0603b9350e8f0",
+      "processing_note": "page-aware-lines-1500-ov150",
+      "source_version": "No edition code printed; PDF file date 2024-12-18",
+      "access_rights": "MSI copyrighted manual. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://download.msi.com/archive/mnu_exe/mb/MAGB650TOMAHAWKWIFI.pdf",
+      "retrieved_utc": "2026-11-17T16:19:50.391255+00:00",
+      "cpu_coverage": "Ryzen 9000/8000/7000",
+      "record_count": 55,
+      "page_range": [
+        5,
+        57
+      ],
+      "skipped_pages": [
+        16,
+        17
+      ],
+      "known_limitations": [
+        "A table row and its footnote can land in different chunks (ADR 2 deferred).",
+        "Chunk size is counted in characters, not tokens.",
+        "Diagram-only pages are skipped; diagram labels on kept pages remain as noise."
+      ]
+    },
+    {
+      "source_id": "S02",
+      "source_filename": "manuals/mb_manual_b650-aorus-elite-ax_1204_e.pdf",
+      "source_sha256": "1e698c2c5cfaea02faa4e0bfb21662efcb691682f772c214f2e3d16bf2329379",
+      "prepared_output": "data/processed/prepared_text_S02.jsonl",
+      "prepared_sha256": "f1f9a93e56f1a88e5acf7b0a17419082d49463b1895194423e7d48e63d0f4df0",
+      "processing_note": "page-aware-lines-1500-ov150",
+      "source_version": "Rev 1204; PDF file date 2024-12-06",
+      "access_rights": "Gigabyte forbids reproduction without written permission. Local copy only.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://download.gigabyte.com/FileList/Manual/mb_manual_b650-aorus-elite-ax_1204_e.pdf",
+      "retrieved_utc": "2026-11-17T16:19:50.391255+00:00",
+      "cpu_coverage": "Ryzen 9000/8000/7000",
+      "record_count": 47,
+      "page_range": [
+        4,
+        36
+      ],
+      "skipped_pages": [],
+      "known_limitations": [
+        "A table row and its footnote can land in different chunks (ADR 2 deferred).",
+        "Chunk size is counted in characters, not tokens.",
+        "Diagram-only pages are skipped; diagram labels on kept pages remain as noise."
+      ]
+    },
+    {
+      "source_id": "S03",
+      "source_filename": "manuals/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf",
+      "source_sha256": "0aa8080c48dcebcb1cf2a599a4adc1e3399513a76786c5885b4cc99a1cdaf50a",
+      "prepared_output": "data/processed/prepared_text_S03.jsonl",
+      "prepared_sha256": "ed0b35ba9e52bd83da358ce7fc690f6328ae7d4c597996eb7e56d6ccd0eac06b",
+      "processing_note": "page-aware-lines-1500-ov150",
+      "source_version": "E20268 First Edition, September 2022",
+      "access_rights": "ASUS copyrighted; PDF permissions disallow copying (copy:no). Text extracted for private coursework only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://dlcdnets.asus.com/pub/ASUS/mb/Socket%20AM5/ROG%20STRIX%20B650-A%20GAMING%20WIFI/E20268_ROG_STRIX_B650-A_GAMING_WIFI_UM_WEB.pdf",
+      "retrieved_utc": "2026-11-17T16:19:50.393255+00:00",
+      "cpu_coverage": "Ryzen 7000 only (no edition covers Ryzen 8000/9000)",
+      "record_count": 68,
+      "page_range": [
+        4,
+        66
+      ],
+      "skipped_pages": [
+        12,
+        36,
+        38,
+        66
+      ],
+      "known_limitations": [
+        "A table row and its footnote can land in different chunks (ADR 2 deferred).",
+        "Chunk size is counted in characters, not tokens.",
+        "Diagram-only pages are skipped; diagram labels on kept pages remain as noise."
+      ]
+    },
+    {
+      "source_id": "S04",
+      "source_filename": "amd/amd-ryzen-7-9700x.html",
+      "source_sha256": "dc382f267008b498848e1ae611de1fa33fd9f507dadaae84cb6caed2171ca40e",
+      "prepared_output": "data/processed/prepared_text_S04.jsonl",
+      "prepared_sha256": "4abb64fe2e669f7db8aba32e84d0fc3633461e345af452f19a4a3b23c91abc7c",
+      "processing_note": "amd-spec-fields-dt-dd",
+      "source_version": "Web page with no revision number; retrieval time recorded in the manifest",
+      "access_rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9700x.html",
+      "retrieved_utc": "2026-11-17T16:19:50.394624+00:00",
+      "cpu_coverage": "n/a (CPU spec page)",
+      "record_count": 54,
+      "page_range": null,
+      "skipped_pages": [],
+      "known_limitations": [
+        "Live web page: a later download can differ, so the hash identifies this snapshot only."
+      ]
+    },
+    {
+      "source_id": "S05",
+      "source_filename": "amd/amd-ryzen-5-7600.html",
+      "source_sha256": "217a6351b1a8541c911e9117adfcc03de9359f1773512a4b715d7233a3a0eadf",
+      "prepared_output": "data/processed/prepared_text_S05.jsonl",
+      "prepared_sha256": "7d3a0f7571ca1b091ef7350936382d77db4bc9b72c7c7d10f18ee47bff75b75c",
+      "processing_note": "amd-spec-fields-dt-dd",
+      "source_version": "Web page with no revision number; retrieval time recorded in the manifest",
+      "access_rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+      "retrieved_utc": "2026-11-17T16:19:50.394624+00:00",
+      "cpu_coverage": "n/a (CPU spec page)",
+      "record_count": 57,
+      "page_range": null,
+      "skipped_pages": [],
+      "known_limitations": [
+        "Live web page: a later download can differ, so the hash identifies this snapshot only."
+      ]
+    },
+    {
+      "source_id": "S06",
+      "source_filename": "amd/amd-ryzen-7-8700g.html",
+      "source_sha256": "c77546a289a07ddaf76db188f169427e8d243eb2ecd4ac3fc71c19cef5e7e422",
+      "prepared_output": "data/processed/prepared_text_S06.jsonl",
+      "prepared_sha256": "4eab958524b255a0ca0a19599b85f4a992530f629c57548d158e8e981ddd2573",
+      "processing_note": "amd-spec-fields-dt-dd",
+      "source_version": "Web page with no revision number; retrieval time recorded in the manifest",
+      "access_rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html",
+      "retrieved_utc": "2026-11-17T16:19:50.394624+00:00",
+      "cpu_coverage": "n/a (CPU spec page)",
+      "record_count": 67,
+      "page_range": null,
+      "skipped_pages": [],
+      "known_limitations": [
+        "Live web page: a later download can differ, so the hash identifies this snapshot only."
+      ]
+    },
+    {
+      "source_id": "S07",
+      "source_filename": "amd/amd-ryzen-5-8600g.html",
+      "source_sha256": "78457ae54a761a44901527ee989a20ccb5dc2a8930249ed191fb1fe109539348",
+      "prepared_output": "data/processed/prepared_text_S07.jsonl",
+      "prepared_sha256": "00eba0791abe6df24ac72b2d518a42aac45d8cb3369f10e7e1dafe759156b6bd",
+      "processing_note": "amd-spec-fields-dt-dd",
+      "source_version": "Web page with no revision number; retrieval time recorded in the manifest",
+      "access_rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8600g.html",
+      "retrieved_utc": "2026-11-17T16:19:50.394624+00:00",
+      "cpu_coverage": "n/a (CPU spec page)",
+      "record_count": 66,
+      "page_range": null,
+      "skipped_pages": [],
+      "known_limitations": [
+        "Live web page: a later download can differ, so the hash identifies this snapshot only."
+      ]
+    },
+    {
+      "source_id": "S08",
+      "source_filename": "amd/amd-ryzen-5-8500g.html",
+      "source_sha256": "390302f2c41801efc880f10bc4b7cfe43ee33cd9f5755b48ef807cca31c8f61d",
+      "prepared_output": "data/processed/prepared_text_S08.jsonl",
+      "prepared_sha256": "7946de8cfbe5cc6ebcbf35e1fdeb5c55aca17aa5481ceae4069ea736823e08f4",
+      "processing_note": "amd-spec-fields-dt-dd",
+      "source_version": "Web page with no revision number; retrieval time recorded in the manifest",
+      "access_rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8500g.html",
+      "retrieved_utc": "2026-11-17T16:19:50.394624+00:00",
+      "cpu_coverage": "n/a (CPU spec page)",
+      "record_count": 68,
+      "page_range": null,
+      "skipped_pages": [],
+      "known_limitations": [
+        "Live web page: a later download can differ, so the hash identifies this snapshot only."
+      ]
+    },
+    {
+      "source_id": "S09",
+      "source_filename": "amd/amd-ryzen-3-8300g.html",
+      "source_sha256": "2eb347a864690edf88a587c96ce400b908cb579dc0ca07f1f457cea7ab743182",
+      "prepared_output": "data/processed/prepared_text_S09.jsonl",
+      "prepared_sha256": "6866dd28a4cc9491983efff382eb09d23d0b5c0fae480c3ffbbbfe2a3f4f2821",
+      "processing_note": "amd-spec-fields-dt-dd",
+      "source_version": "Web page with no revision number; retrieval time recorded in the manifest",
+      "access_rights": "AMD website terms: personal, non-public use. Local copy only, not redistributed.",
+      "status": "Prepared; quality review pending",
+      "source_url": "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-3-8300g.html",
+      "retrieved_utc": "2026-11-17T16:19:50.394624+00:00",
+      "cpu_coverage": "n/a (CPU spec page)",
+      "record_count": 69,
+      "page_range": null,
+      "skipped_pages": [],
+      "known_limitations": [
+        "Live web page: a later download can differ, so the hash identifies this snapshot only."
+      ]
+    }
+  ]
+}
