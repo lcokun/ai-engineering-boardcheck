@@ -84,8 +84,8 @@ MSI names the models directly ("8700/8600/8400", "8500/8300"), so its groups map
 | Objective | Requirement | Evaluation Criterion | Architecture Element | Later Evidence |
 |---|---|---|---|---|
 | O1 | FR1–FR3, NFR1 | Answer correctness ≥ 80%, ≥ 20 pp over baseline | Knowledge Access + Language Model Service | Gold-set score against the no-retrieval baseline |
-| O1 | FR5, RAI1 | Citation presence 100%, support ≥ 95% | Citation Check; page provenance in the Knowledge Source | Citation audit of the gold-set run |
-| O2 | NFR2 | Evidence recall ≥ 90% | Document Pipeline | Evidence recall per manual |
+| O1 | FR5, RAI1 | Citation presence 100%, support ≥ 95% | Citation Check; page provenance in the Knowledge Source | Citation audit of the gold-set run; page labels checked in Week 4 (V1, `docs/week4_data_quality_report.md`) |
+| O2 | NFR2 | Evidence recall ≥ 90% | Document Pipeline | Evidence recall per manual; Week 3 probes (8/8, p. 26 known gap, `docs/week3_pipeline_decisions.md`); Week 4 footnote check (V2) |
 | O2 | FR4 | Mapping accuracy 100% | CPU-Group Resolver | Results on Ryzen 8000 and Phoenix-trap questions |
 | O2 | FR6, RAI2 | Correct refusals ≥ 90%, false refusals ≤ 10% | Scope & Coverage Control | Results on the 20 unanswerable and 54 answerable questions |
 | O2 | FR7, RAI3 | Coverage notice 100% | Scope & Coverage Control + coverage metadata | Results on the 8 ASUS coverage-gap questions |
@@ -103,6 +103,6 @@ MSI names the models directly ("8700/8600/8400", "8500/8300"), so its groups map
 
 **Which architecture decision involved the most important trade-off? Which requirement drove it, and what trade-off was accepted?**
 
-ADR 4. RAI2 and RAI3 drove it: the system must not answer when the manual is silent. False refusals are accepted up to 30%, because a wrong compatibility answer can cost a builder money, while a wrongly refused question only sends them back to the manual.
+ADR 4. RAI2 and RAI3 drove it: the system must not answer when the manual is silent. False refusals are accepted up to 10%, because a wrong compatibility answer can cost a builder money, while a wrongly refused question only sends them back to the manual.
 
 *AI use: drafted with help from Claude (Anthropic). Quotes, figures and URLs were checked against the source documents between 18 and 23 Oct 2026.*
