@@ -1,0 +1,76 @@
+== Population
+S01: 55 chunks
+S02: 47 chunks
+S03: 68 chunks
+S04: 54 spec fields
+S05: 57 spec fields
+S06: 67 spec fields
+S07: 66 spec fields
+S08: 68 spec fields
+S09: 69 spec fields
+Total: 551 records (170 manual chunks, 381 AMD spec fields)
+
+== Sample (purposive + seeded random)
+Purposive (12): S01-p018-c01, S01-p019-c01, S01-p031-c01, S02-p009-c01, S02-p026-c01, S02-p023-c01, S03-p006-c01, S03-p010-c01, S06-f006, S06-f037, S08-f006, S08-f039
+Random, seed 4 (8): S01-p025-c01, S01-p030-c01, S01-p034-c01, S01-p047-c01, S02-p010-c01, S02-p022-c01, S03-p007-c01, S03-p030-c01
+
+== Reused Topic 3 checks (all records)
+Locator + source metadata present: 551/551; failures: none
+Max manual chunk length: 1499 chars
+Residual □ glyphs: 0; residual control characters: 0
+
+== V1 (FR5): printed page label consistent with PDF page
+S01: pages 51 | pass 51 | fail 0 | N.V. 0
+   mapping: arabic: PDF = printed + 2
+   fails: none; N.V. pages: none
+S02: pages 33 | pass 33 | fail 0 | N.V. 0
+   mapping: arabic: PDF = printed + 0
+   fails: none; N.V. pages: none
+S03: pages 59 | pass 59 | fail 0 | N.V. 0
+   mapping: chapter-1: PDF = printed + 12, chapter-2: PDF = printed + 36, chapter-3: PDF = printed + 60, roman: PDF = printed + 0
+   fails: none; N.V. pages: none
+
+== V2 (NFR2): footnote reference and footnote body in the same chunk
+S01: footnote links 7 | pass 7 | split across chunks 0 | other half not found on page 0
+S02: footnote links 14 | pass 3 | split across chunks 2 | other half not found on page 9
+   split: S02-p026-c01 (Note) missing body
+   split: S02-p026-c02 (Note) missing ref
+   review: S02-p006-c01 * missing ref
+   review: S02-p008-c01 * missing ref
+   review: S02-p008-c01 ** missing ref
+   review: S02-p009-c01 * missing ref
+   review: S02-p010-c01 * missing ref
+   review: S02-p011-c01 * missing ref
+   review: S02-p013-c01 * missing ref
+   review: S02-p014-c01 * missing ref
+   review: S02-p026-c01 * missing ref
+S03: footnote links 8 | pass 6 | split across chunks 0 | other half not found on page 2
+   review: S03-p057-c01 * missing ref
+   review: S03-p057-c01 ** missing ref
+
+== Uniqueness
+Exact duplicate texts across all records: 0 texts, 0 records
+AMD section|field: value strings identical on all 6 pages: 20; on 2-5 pages: 62; unique to one page: 70
+S01: overlap repeats 464 of 35222 chars (1.3%)
+S02: overlap repeats 1662 of 47836 chars (3.5%)
+S03: overlap repeats 1010 of 51301 chars (2.0%)
+
+== Anomalies (manual chunks)
+Shortest: S01-p014-c01 (72 chars), S03-p049-c01 (75 chars), S03-p059-c01 (75 chars), S01-p015-c01 (78 chars), S03-p042-c01 (84 chars)
+Lowest letter ratio: S02-p021-c02 (0.46), S01-p008-c01 (0.51), S03-p014-c01 (0.51), S01-p015-c01 (0.54), S03-p015-c01 (0.56)
+
+== Coverage (manual chunks mentioning each CPU series / a lane-sharing rule)
+S01: {'Ryzen 9000': 1, 'Ryzen 8000': 2, 'Ryzen 7000': 1} | sharing-rule chunks: ['S01-p018-c01', 'S01-p019-c01', 'S01-p031-c01', 'S01-p036-c01']
+S02: {'Ryzen 9000': 2, 'Ryzen 8000': 2, 'Ryzen 7000': 2} | sharing-rule chunks: none
+S03: {'Ryzen 9000': 0, 'Ryzen 8000': 0, 'Ryzen 7000': 3} | sharing-rule chunks: ['S03-p006-c01', 'S03-p006-c02', 'S03-p010-c01', 'S03-p022-c01']
+
+== Pipeline-induced loss: Gigabyte pp. 23-30 (□ token stripping)
+p.23: 208 tokens dropped, 162 letters inside them | raw letters 1435, prepared letters 1273 | heading: • Be sure to connect fan cables to
+p.24: 0 tokens dropped, 0 letters inside them | raw letters 993, prepared letters 993 | heading: 8) CPU_LED (CPU Cooler LED Strip/RGB LED Strip
+p.25: 0 tokens dropped, 0 letters inside them | raw letters 1511, prepared letters 1511 | heading: Pin No. Definition
+p.26: 312 tokens dropped, 243 letters inside them | raw letters 1632, prepared letters 1389 | heading: 12) M2A_CPU/M2B_CPU/M2C_SB (M.2 Socket 3 Connectors)
+p.27: 0 tokens dropped, 0 letters inside them | raw letters 1683, prepared letters 1683 | heading: 13) F_PANEL (Front Panel Header)
+p.28: 208 tokens dropped, 162 letters inside them | raw letters 999, prepared letters 837 | heading: 14) F_AUDIO (Front Panel Audio Header)
+p.29: 104 tokens dropped, 81 letters inside them | raw letters 729, prepared letters 648 | heading: 16) F_U32 (USB 3.2 Gen 1 Header)
+p.30: 104 tokens dropped, 81 letters inside them | raw letters 742, prepared letters 661 | heading: 18) SPI_TPM (Trusted Platform Module Header)
+
