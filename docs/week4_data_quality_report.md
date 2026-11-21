@@ -40,7 +40,7 @@ Mappings found by V1:
 | Gigabyte (S02) | 33 | 0 |
 | ASUS (S03) | 59 | roman 0 · chapter 1: 12 · chapter 2: 36 · chapter 3: 60 |
 
-The 11 V2 review cases were classified from rendered page images, and three were confirmed by eye in the PDF (Gigabyte pp. 10, 14 and 23):
+The 11 V2 review cases were classified from rendered page images, and two were confirmed by eye in the PDF (Gigabyte pp. 10 and 14):
 
 - Gigabyte, 9 cases on 8 pages (pp. 6, 8, 9, 10, 11, 13, 14, 26): positional notes placed directly under the line they qualify, with no marker in that line, or page-wide disclaimers. Gigabyte does not use reference markers for these.
 - ASUS p. 57, 2 cases: the tables that p. 56's `*` and `**` point to ("Refer to the tables on the next page"). Chunks never cross pages.
